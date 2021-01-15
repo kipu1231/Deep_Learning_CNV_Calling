@@ -72,11 +72,11 @@ if __name__ == '__main__':
     name_bam = get_bam_name(args.sample_id)
 
     if name_bam is not None:
-        args.bam_fn = os.path.join(args.sample_id,name_bam)
-        args.bam_bai_fn = os.path.join(args.sample_id,name_bam + ".bai")
+        args.bam_fn = os.path.join(args.sample_id, name_bam)
+        args.bam_bai_fn = os.path.join(args.sample_id, name_bam + ".bai")
 
-    print(args.bam_bai_fn)
-    print(args.bam_fn)
+    #print(args.bam_bai_fn)
+    #print(args.bam_fn)
 
     'Start Preprocessing'
     l1 = np.arange(1, 23, 1)
@@ -91,8 +91,3 @@ if __name__ == '__main__':
 
     else:
         print('chromosome does not exist')
-
-
-    'Index Fasta'
-    #fasta_path = "/Users/chiarapullem/Uni/Master/MA2/Deep_Learning_CNV_Calling/Preprocessing/Homo_sapiens.GRCh37.dna.primary_assembly.fa"
-    #index_fasta(args, fasta_path)

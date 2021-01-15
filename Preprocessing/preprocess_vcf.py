@@ -18,7 +18,7 @@ def get_path(args):
 def preprocess_vcf(args, sample_id, stat):
     if args.prepro_type == 'split':
         work_dir = get_path(args)
-        vcf_all_samples_path = os.path.join(work_dir, "VCF", args.vcf_fn)
+        vcf_all_samples_path = os.path.join(work_dir, args.vcf_fn)
 
         save_dir_vcf = os.path.join(work_dir, sample_id)
         if not os.path.exists(save_dir_vcf):
@@ -35,9 +35,6 @@ def preprocess_vcf(args, sample_id, stat):
         # p4 = subprocess.call(shlex.split("bcftools stats -s %s %s" % (sample_id, args.vcf_fn)))
         prepare_vcf(args, sample_id, stat)
 
-    # elif args.prepro_type == 'removeDub':
-    #     name_vcf_out = os.path.join(save_dir_vcf, sample_id + "_all_sv_no_dub.vcf")
-    #     p1 = subprocess.call(shlex.split("bcftools norm -d none -o %s %s " % (name_vcf_out, args.vcf_fn)))
 
 
 def prepare_vcf(args, sample_id, stat):
@@ -193,15 +190,15 @@ if __name__ == '__main__':
     parser.add_argument('--with_stat', type=bool, default=True,
                         help="Show statistics of CNVs")
     parser.add_argument('--prepro_type', type=str, default='format',
-                        help="Preprocess types: split, tabix, format or removeDub")
+                        help="Preprocess types: split, tabix, format")
     parser.add_argument('--vcf_fn', type=str, default='ALL.wgs.integrated_sv_map_v2.20130502.svs.genotypes.vcf.gz',
                         help="VCF file to be processed")
 
     args = parser.parse_args()
 
-    # 'Prepare path to vcf file for subset preprocessing'
-    # if args.prepro_type == 'split' and args.vcf_fn is not None:
-    #     args.vcf_fn = os.path.join(args.work_dir, "VCF", args.vcf_fn)
+    'Prepare path to vcf file for subset preprocessing'
+    #if args.prepro_type == 'split' and args.vcf_fn is not None:
+    #    args.vcf_fn = os.path.join(args.work_dir, "VCF", args.vcf_fn)
 
     'Get sample id and split vcf by sample'
     l1 = ['NA18525', 'NA19625', 'NA19648', 'NA20502']
@@ -210,7 +207,7 @@ if __name__ == '__main__':
     if args.sample_all:
         for sample in l1:
             args.work_dir = get_path(args)
-            if args.prepro_type == 'tabix' or args.prepro_type == 'removeDub':
+            if args.prepro_type == 'tabix':
                 args.vcf_fn = os.path.join(args.work_dir, sample, sample + "_all_sv.vcf")
             elif args.prepro_type == 'format':
                 args.sample_id = sample
@@ -218,7 +215,7 @@ if __name__ == '__main__':
             preprocess_vcf(args, sample, args.with_stat)
     elif args.sample_all == False and args.sample_id is not None:
         args.work_dir = get_path(args)
-        if args.prepro_type == 'tabix' or args.prepro_type == 'removeDub':
+        if args.prepro_type == 'tabix':
             args.vcf_fn = os.path.join(args.work_dir, args.sample_id, args.sample_id + "_all_sv.vcf.gz")
         elif args.prepro_type == 'format':
             args.vcf_fn = os.path.join(args.work_dir, args.sample_id, args.sample_id + "_all_sv.vcf")

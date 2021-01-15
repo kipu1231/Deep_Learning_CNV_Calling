@@ -8,6 +8,7 @@ import pysam
 #from ImageGeneration.Input_Image_cnnCNV import *
 from Image_Visualization import *
 import random
+import numpy as np
 
 
 def prepare_variants(args, vcf_path, chr_id):
@@ -254,6 +255,8 @@ if __name__ == '__main__':
     'get Path to BAM file and generate images'
     if args.chr_id == 'all':
         for chr_i in range(1, 23):
+            print("------")
+            print("Start Image generation for chromosome: "+ str(chr_i))
             bam_fn = get_bam_path(args, chr_i)
             'get chromosome information'
             args.rd_count, args.chr_len = get_cov_info(bam_fn, chr_i)
@@ -262,9 +265,12 @@ if __name__ == '__main__':
             vcf_var = prepare_variants(args, vcf_fn, chr_i)
             generate_training_img(vcf_var, bam_fn)
 
+            print("Variant Image generation done for chromosome: " + str(chr_i))
+
             'generate non variant training images'
             vcf_non_var = prepare_non_variants(args, fast_fn, chr_i)
             generate_training_img(vcf_non_var, bam_fn)
+            print("Image generation done for chromosome: " + str(chr_i))
     else:
         bam_fn = get_bam_path(args, args.chr_id)
         'get chromosome information'

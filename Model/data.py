@@ -8,8 +8,8 @@ import torchvision.transforms as transforms
 from torch.utils.data import Dataset
 from PIL import Image
 
-MEAN = [0.5, 0.5, 0.5]
-STD = [0.5, 0.5, 0.5]
+MEAN = [0.485, 0.456, 0.406]
+STD = [0.229, 0.224, 0.225]
 
 
 class CNVData(Dataset):
@@ -41,7 +41,11 @@ class CNVData(Dataset):
 
         for id in sample_id:
             for chr in chrom_id:
-                helper_dir = os.path.join(data_dir, id, "chr_" + str(chr), "img_test3")
+
+                if args.bwcluster:
+                    helper_dir = os.path.join(data_dir, id, "chr_" + str(chr), "img_vis_50")
+                else:
+                    helper_dir = os.path.join(data_dir, id, "chr_" + str(chr), "img_train")
 
                 for f in sorted(os.listdir(helper_dir)):
                     img_path = os.path.join(helper_dir, f)

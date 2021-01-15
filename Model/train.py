@@ -36,6 +36,7 @@ if __name__ == '__main__':
 
     ''' load dataset and prepare data loader '''
     print('===> prepare dataloader ...')
+
     train_loader = torch.utils.data.DataLoader(Model.data.CNVData(args, mode='train'),
                                                batch_size=args.train_batch,
                                                num_workers=args.workers,
@@ -48,12 +49,16 @@ if __name__ == '__main__':
 
     ''' load model '''
     print('===> prepare model ...')
-    model = Model.models.Net(args)
+    if args.model == "Net":
+        model = Model.models.Net(args)
+    elif args.model == "CNN_Net":
+        model = Model.models.CNN_Net(args)
+
     if torch.cuda.is_available():
         model.cuda() #load model to gpu
 
     #testing input/output sizes of layer
-    #summary(model, (3, 256,256))
+    summary(model, (3, 265,265))
 
     ''' define loss '''
     criterion = nn.CrossEntropyLoss()

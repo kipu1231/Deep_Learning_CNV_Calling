@@ -21,11 +21,11 @@ def arg_parse():
 
     parser.add_argument('--sample_id', type=list, default=["NA18511"],
                         help="list of samples that should be included for training")
-    parser.add_argument('--chrom_id', type=list, default=["1"],
+    parser.add_argument('--chrom_id', type=list, default=["2"],
                         help="List of chromosomes that should be included for training")
     parser.add_argument('--sample_id_val', type=list, default=["NA18511"],
                         help="list of samples that should be included for validation")
-    parser.add_argument('--chrom_id_val', type=list, default=["2","3"],
+    parser.add_argument('--chrom_id_val', type=list, default=["3"],
                         help="List of chromosomes that should be included for validation")
     parser.add_argument('--sample_id_test', type=list, default=["NA18511"],
                         help="list of samples that should be included for testing")
@@ -47,6 +47,8 @@ def arg_parse():
                     help="initial learning rate")
     parser.add_argument('--weight-decay', default=0.0005, type=float,
                     help="initial learning rate")
+    parser.add_argument('--model', type=str, default="CNN_Net",
+                        help="Name of the model used for training")
     
     # resume trained model
     parser.add_argument('--resume', type=str, default='', 
