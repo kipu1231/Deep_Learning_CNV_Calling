@@ -50,8 +50,15 @@ class CNVData(Dataset):
                 for f in sorted(os.listdir(helper_dir)):
                     img_path = os.path.join(helper_dir, f)
                     img_label = str(f.split('_')[1])
-                    img_tuple = (img_path, int(img_label))
-                    data_dir_list.append(img_tuple)
+                    img_label = int(img_label)
+
+                    if args.exclude_no_cnvs:
+                        if not img_label == 0:
+                            img_tuple = (img_path, img_label)
+                            data_dir_list.append(img_tuple)
+                    else:
+                        img_tuple = (img_path, img_label)
+                        data_dir_list.append(img_tuple)
 
         self.data = data_dir_list
 

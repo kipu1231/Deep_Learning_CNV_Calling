@@ -6,6 +6,14 @@ def arg_parse():
     parser = argparse.ArgumentParser(description='Model for calling CNVs')
 
     # training, validation and test data settings
+    # parser.add_argument('--sample_id', type=list, default=["NA18511"],
+    #                     help="list of samples that should be included for training")
+    # parser.add_argument('--chrom_id', type=list, default=["2"],
+    #                     help="List of chromosomes that should be included for training")
+    # parser.add_argument('--sample_id_val', type=list, default=["NA18511"],
+    #                     help="list of samples that should be included for validation")
+    # parser.add_argument('--chrom_id_val', type=list, default=["3"],
+    #                     help="List of chromosomes that should be included for training")
     parser.add_argument('--sample_id', type=list, default=["NA20502", "NA18525"],
                         help="list of samples that should be included for training")
     parser.add_argument('--chrom_id', type=list, default=["1", "2","3", "4", "5", "6",
@@ -18,7 +26,7 @@ def arg_parse():
                         help="List of chromosomes that should be included for validation")
     parser.add_argument('--sample_id_test', type=list, default=["NA18511"],
                         help="list of samples that should be included for testing")
-    parser.add_argument('--chrom_id_test', type=list, default=["2"],
+    parser.add_argument('--chrom_id_test', type=list, default=["1"],
                         help="List of chromosomes that should be included for testing")
 
     # training parameters
@@ -34,9 +42,9 @@ def arg_parse():
                         help="num of validation iterations")
     parser.add_argument('--val_epoch', default=1, type=int,
                         help="num of validation iterations")
-    parser.add_argument('--train_batch', default=256, type=int,
+    parser.add_argument('--train_batch', default=128, type=int,
                         help="train batch size")
-    parser.add_argument('--test_batch', default=256, type=int,
+    parser.add_argument('--test_batch', default=128, type=int,
                         help="test batch size")
 
 
@@ -63,6 +71,8 @@ def arg_parse():
     # others
     parser.add_argument('--save_dir', type=str, default='log')
     parser.add_argument('--random_seed', type=int, default=999)
+    parser.add_argument('--exclude_no_cnvs', type=bool, default=False)
+
 
     args = parser.parse_args()
 

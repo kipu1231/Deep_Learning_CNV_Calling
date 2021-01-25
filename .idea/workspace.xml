@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e6ee702-a4cc-4ca1-bea6-13a3d438837c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Model/train_ray_tune.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/data.py" beforeDir="false" afterPath="$PROJECT_DIR$/Model/data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Model/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Model/parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/Model/parser.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Model/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/Model/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Model/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/Model/train.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/train.sh" beforeDir="false" afterPath="$PROJECT_DIR$/Model/train.sh" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,12 +31,12 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Model/test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="454">
-              <caret line="36" column="37" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="37" />
+            <state relative-caret-position="369">
+              <caret line="41" selection-start-line="41" selection-end-line="41" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -42,11 +44,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Model/parser.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="86" lean-forward="true" selection-start-line="10" selection-start-column="86" selection-end-line="10" selection-end-column="86" />
+            <state relative-caret-position="-473">
+              <caret line="25" column="90" lean-forward="true" selection-start-line="25" selection-start-column="90" selection-end-line="25" selection-end-column="90" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -57,8 +59,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Model/train.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1354">
-              <caret line="130" column="34" lean-forward="true" selection-start-line="130" selection-start-column="34" selection-end-line="130" selection-end-column="34" />
+            <state relative-caret-position="153">
+              <caret line="18" selection-start-line="18" selection-end-line="18" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -66,13 +68,34 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ImageGeneration/Image_Generation.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Model/train_ray_tune.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3303">
-              <caret line="249" column="30" selection-start-line="249" selection-start-column="13" selection-end-line="249" selection-end-column="30" />
+            <state relative-caret-position="300">
+              <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Model/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="690">
+              <caret line="46" selection-start-line="46" selection-end-line="46" />
               <folding>
-                <element signature="e#0#15#0" expanded="true" />
+                <element signature="e#0#12#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Model/data.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="346">
+              <caret line="59" column="56" selection-start-line="59" selection-start-column="56" selection-end-line="59" selection-end-column="56" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -116,7 +139,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Non_Deletion_Image_Source/FILE_CLASS.py" />
         <option value="$PROJECT_DIR$/Whole Genome Imags/Whole_genome_Image.py" />
         <option value="$PROJECT_DIR$/Whole_Genome_Imags/Candidate_Image.py" />
         <option value="$PROJECT_DIR$/Non_Deletion_Image_Source/Candidate_Image.py" />
@@ -138,9 +160,7 @@
         <option value="$PROJECT_DIR$/ImageGeneration/Variant_Filtering.py" />
         <option value="$PROJECT_DIR$/ImageGeneration/Input_Image_cnnCNV.py" />
         <option value="$PROJECT_DIR$/ImageGeneration/Input_Image.py" />
-        <option value="$PROJECT_DIR$/Model/models.py" />
         <option value="$PROJECT_DIR$/Preprocessing/read_depth_stat.py" />
-        <option value="$PROJECT_DIR$/Model/data.py" />
         <option value="$PROJECT_DIR$/Preprocessing/preprocess_bam.py" />
         <option value="$PROJECT_DIR$/ImageGeneration/job_IG.py" />
         <option value="$PROJECT_DIR$/Preprocessing/preprocess_fasta.py" />
@@ -150,8 +170,6 @@
         <option value="$PROJECT_DIR$/Preprocessing/preprocess_vcf.py" />
         <option value="$PROJECT_DIR$/ImageGeneration/Image_Generation.py" />
         <option value="$PROJECT_DIR$/../../3. Semester/NTU/Deep Learning/hw2-kipu1231/models.py" />
-        <option value="$PROJECT_DIR$/Model/data.py" />
-        <option value="$PROJECT_DIR$/Model/models.py" />
         <option value="$PROJECT_DIR$/Preprocessing/job_prep_bam.sh" />
         <option value="$PROJECT_DIR$/Preprocessing/job_prep_vcf.sh" />
         <option value="$PROJECT_DIR$/Preprocessing/job_prep_fasta.sh" />
@@ -160,21 +178,26 @@
         <option value="$PROJECT_DIR$/ImageGeneration/Image_Generation.py" />
         <option value="$PROJECT_DIR$/Model/log/training.log" />
         <option value="$PROJECT_DIR$/Postprocessing/count_result.py" />
-        <option value="$PROJECT_DIR$/Model/parser.py" />
-        <option value="$PROJECT_DIR$/Model/parser.py" />
-        <option value="$PROJECT_DIR$/Model/test.py" />
-        <option value="$PROJECT_DIR$/Model/test.py" />
-        <option value="$PROJECT_DIR$/Model/train.py" />
-        <option value="$PROJECT_DIR$/Model/train.py" />
         <option value="$PROJECT_DIR$/Model/train.sh" />
+        <option value="$PROJECT_DIR$/Model/data.py" />
+        <option value="$PROJECT_DIR$/Model/data.py" />
+        <option value="$PROJECT_DIR$/Model/test.py" />
+        <option value="$PROJECT_DIR$/Model/test.py" />
+        <option value="$PROJECT_DIR$/Model/train.py" />
+        <option value="$PROJECT_DIR$/Model/train.py" />
+        <option value="$PROJECT_DIR$/Model/models.py" />
+        <option value="$PROJECT_DIR$/Model/models.py" />
+        <option value="$PROJECT_DIR$/Model/train_ray_tune.py" />
+        <option value="$PROJECT_DIR$/Model/parser.py" />
+        <option value="$PROJECT_DIR$/Model/parser.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="19" />
-    <option name="y" value="23" />
-    <option name="width" value="1421" />
-    <option name="height" value="800" />
+    <option name="x" value="-158" />
+    <option name="y" value="-1057" />
+    <option name="width" value="1576" />
+    <option name="height" value="932" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -182,6 +205,22 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
+          <expand>
+            <path>
+              <item name="Deep_Learning_CNV_Calling" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="~/Uni/Master/MA2/Deep_Learning_CNV_Calling" type="442cc68d:ScopeViewTreeModel$RootNode" />
+            </path>
+            <path>
+              <item name="Deep_Learning_CNV_Calling" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="~/Uni/Master/MA2/Deep_Learning_CNV_Calling" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="Model" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -198,35 +237,22 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope">
-        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
-          <expand>
-            <path>
-              <item name="Deep_Learning_CNV_Calling" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="~/Uni/Master/MA2/Deep_Learning_CNV_Calling" type="442cc68d:ScopeViewTreeModel$RootNode" />
-            </path>
-            <path>
-              <item name="Deep_Learning_CNV_Calling" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="~/Uni/Master/MA2/Deep_Learning_CNV_Calling" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="ImageGeneration" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Model" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Model" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/Preprocessing/NA18525" />
@@ -420,11 +446,12 @@
       <workItem from="1608199189104" duration="84077000" />
       <workItem from="1609777922718" duration="96067000" />
       <workItem from="1611160943355" duration="29280000" />
+      <workItem from="1611595176765" duration="8131000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="423265000" />
+    <option name="totallyTimeSpent" value="431396000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -436,15 +463,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="19" y="23" width="1421" height="800" extended-state="0" />
+    <frame x="-158" y="-1057" width="1576" height="932" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26105875" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23794003" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32690126" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.7939498" weight="0.4463277" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.7939498" visible="true" weight="0.43571427" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39788732" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -453,9 +480,9 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Inspection Results" order="10" weight="0.32941177" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49657536" weight="0.51129943" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49657536" weight="0.5107143" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.20605023" side_tool="true" weight="0.35642457" />
-      <window_info anchor="bottom" id="Python Console" order="13" weight="0.32870865" />
+      <window_info anchor="bottom" id="Python Console" order="13" weight="0.32857144" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -464,16 +491,16 @@
       <window_info anchor="right" id="Coverage" order="5" side_tool="true" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21392313" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23794003" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32768363" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.7939498" visible="true" weight="0.10169491" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39896372" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32690126" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.7939498" visible="true" weight="0.35119048" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39788732" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3298122" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
@@ -495,7 +522,7 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/DeepSV$train.coverage" NAME="train Coverage Results" MODIFIED="1611079702826" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Model" />
     <SUITE FILE_PATH="coverage/DeepSV$preprocess_vcf.coverage" NAME="preprocess_vcf Coverage Results" MODIFIED="1608494234190" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Preprocessing" />
-    <SUITE FILE_PATH="coverage/Deep_Learning_CNV_Calling$train__1_.coverage" NAME="train (1) Coverage Results" MODIFIED="1611339191659" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Model" />
+    <SUITE FILE_PATH="coverage/Deep_Learning_CNV_Calling$train__1_.coverage" NAME="train (1) Coverage Results" MODIFIED="1611604353985" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Model" />
     <SUITE FILE_PATH="coverage/DeepSV$k_means.coverage" NAME="k_means Coverage Results" MODIFIED="1607541453811" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/K_Means_Cluster_Source" />
     <SUITE FILE_PATH="coverage/DeepSV$preprocess_bam.coverage" NAME="preprocess_bam Coverage Results" MODIFIED="1610449364839" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Preprocessing" />
     <SUITE FILE_PATH="coverage/Deep_Learning_CNV_Calling$test.coverage" NAME="test Coverage Results" MODIFIED="1611311371495" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Model" />
@@ -505,7 +532,6 @@
     <SUITE FILE_PATH="coverage/DeepSV$read_depth_stat.coverage" NAME="read_depth_stat Coverage Results" MODIFIED="1609179708502" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Preprocessing" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Non_Deletion_Image_Source/FILE_CLASS.py" />
     <entry file="file://$PROJECT_DIR$/Non_Deletion_Image_Source/Generate_Non_Deletion_Image.py" />
     <entry file="file://$PROJECT_DIR$/Preprocessing/NA20502/NA20502_cnv_list.csv" />
     <entry file="file://$PROJECT_DIR$/Preprocessing/NA20502/NA20502_all_sv.vcf" />
@@ -744,16 +770,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Model/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1186">
-          <caret line="99" column="43" lean-forward="true" selection-start-line="99" selection-start-column="43" selection-end-line="99" selection-end-column="43" />
-          <folding>
-            <element signature="e#0#12#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Model/test.sh">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -761,16 +777,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
           <caret line="186" column="4" selection-start-line="186" selection-start-column="4" selection-end-line="186" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Model/data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-539">
-          <caret line="22" column="72" selection-start-line="22" selection-start-column="66" selection-end-line="22" selection-end-column="72" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -801,20 +807,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Model/parser.py">
+    <entry file="file://$PROJECT_DIR$/ImageGeneration/Image_Generation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="86" lean-forward="true" selection-start-line="10" selection-start-column="86" selection-end-line="10" selection-end-column="86" />
+        <state relative-caret-position="16">
+          <caret line="249" column="30" selection-start-line="249" selection-start-column="13" selection-end-line="249" selection-end-column="30" />
           <folding>
-            <element signature="e#0#38#0" expanded="true" />
+            <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Model/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
-          <caret line="36" column="37" selection-start-line="36" selection-start-column="32" selection-end-line="36" selection-end-column="37" />
+        <state relative-caret-position="369">
+          <caret line="41" selection-start-line="41" selection-end-line="41" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Model/data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="346">
+          <caret line="59" column="56" selection-start-line="59" selection-start-column="56" selection-end-line="59" selection-end-column="56" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
@@ -823,20 +839,37 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Model/train.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1354">
-          <caret line="130" column="34" lean-forward="true" selection-start-line="130" selection-start-column="34" selection-end-line="130" selection-end-column="34" />
+        <state relative-caret-position="153">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ImageGeneration/Image_Generation.py">
+    <entry file="file://$PROJECT_DIR$/Model/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3303">
-          <caret line="249" column="30" selection-start-line="249" selection-start-column="13" selection-end-line="249" selection-end-column="30" />
+        <state relative-caret-position="690">
+          <caret line="46" selection-start-line="46" selection-end-line="46" />
           <folding>
-            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Model/train_ray_tune.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Model/parser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-473">
+          <caret line="25" column="90" lean-forward="true" selection-start-line="25" selection-start-column="90" selection-end-line="25" selection-end-column="90" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
           </folding>
         </state>
       </provider>

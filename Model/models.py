@@ -36,14 +36,14 @@ class Net(nn.Module):
 
         self.classifier = torch.nn.Sequential(
             nn.Linear(16384, 512),
-            nn.BatchNorm1d(512),
             nn.LeakyReLU(True),
             nn.Dropout2d(0.3, True),
+            nn.BatchNorm1d(512),
 
             nn.Linear(512, 128),
-            nn.BatchNorm1d(128),
             nn.LeakyReLU(True),
             nn.Dropout2d(0.3, True),
+            nn.BatchNorm1d(128),
 
             nn.Linear(128, 3)
         )
@@ -70,26 +70,26 @@ class CNN_Net(nn.Module):
 
             # first block
             nn.Conv2d(3, 32, kernel_size=7, stride=2, padding=1),  # 265x265 -> 131x131
-            nn.BatchNorm2d(32),
             nn.ReLU(),
+            nn.BatchNorm2d(32),
             #nn.MaxPool2d(kernel_size=2, stride=2),  # 64x64 -> 32x32
 
             # second block
             nn.Conv2d(32, 64, kernel_size=5, stride=1, padding=1),  # 131x131 -> 129x129
-            nn.BatchNorm2d(64),
             nn.ReLU(),
+            nn.BatchNorm2d(64),
             nn.MaxPool2d(kernel_size=2, stride=2), # 129x129 -> 64x64
 
             # third block
             nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1),  # 64x64 -> 64x64
-            nn.BatchNorm2d(128),
             nn.ReLU(),
+            nn.BatchNorm2d(128),
             nn.MaxPool2d(kernel_size=2, stride=2),  # 64x64 -> 32x32
 
             # fourth block
             nn.Conv2d(128, 265, kernel_size=3, stride=1, padding=1),  # 32x32 -> 32x32
-            nn.BatchNorm2d(265),
             nn.ReLU(),
+            nn.BatchNorm2d(265),
             nn.MaxPool2d(kernel_size=2, stride=2),  # 32x32 -> 16x16
 
             #nn.AvgPool2d(kernel_size=4, stride=2),  # 16x16 -> 7x7
@@ -98,9 +98,18 @@ class CNN_Net(nn.Module):
 
         # classification
         self.classif = torch.nn.Sequential(
-            nn.Linear(67840, 128),
-            nn.BatchNorm1d(128),
+            nn.Linear(67840, 4096,bias=False),
             nn.ReLU(True),
+            nn.BatchNorm1d(4096),
+            #nn.BatchNorm1d(128),
+            #nn.ReLU(True),
+            nn.Linear(4096, 1000, bias=False),
+            nn.ReLU(True),
+            nn.BatchNorm1d(1000),
+
+            nn.Linear(1000, 128, bias=False),
+            nn.ReLU(True),
+            nn.BatchNorm1d(128),
 
             nn.Linear(128, 3)
         )

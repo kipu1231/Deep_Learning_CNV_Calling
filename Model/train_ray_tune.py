@@ -18,6 +18,24 @@ def save_model(model, save_path):
     torch.save(model.state_dict(), save_path)
 
 
+def load_data(args):
+
+    train_loader = torch.utils.data.DataLoader(data.CNVData(args, mode='train'),
+                                               batch_size=args.train_batch,
+                                               num_workers=args.workers,
+                                               shuffle=True)
+
+    val_loader = torch.utils.data.DataLoader(data.CNVData(args, mode='val'),
+                                             batch_size=args.train_batch,
+                                             num_workers=args.workers,
+                                             shuffle=False)
+    return train_loader, val_loader
+
+
+#def train(config, checkpoint_dir=None, args):
+
+
+
 if __name__ == '__main__':
 
     args = parser.arg_parse()

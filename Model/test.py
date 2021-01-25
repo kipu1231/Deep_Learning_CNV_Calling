@@ -22,8 +22,10 @@ def evaluate(model, data_loader):
             if torch.cuda.is_available():
                 imgs = imgs.cuda()
             pred = model(imgs)
+            print(pred.shape)
 
             _, pred = torch.max(pred, dim=1)
+            print(pred.shape)
 
             pred = pred.cpu().numpy().squeeze()
             gt = gt.numpy().squeeze()
