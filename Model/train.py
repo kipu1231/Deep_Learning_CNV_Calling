@@ -1,16 +1,17 @@
 import os
 import torch
-
-from Model.parser import *
-import Model.models
-import Model.data
-from Model.test import *
-
+import models
+import data
+import test
+from test import *
 import numpy as np
 import torch.nn as nn
-from torchsummary import summary
-
+#from torchsummary import summary
 from tensorboardX import SummaryWriter
+import logging
+import parser
+from datetime import datetime
+import matplotlib.pyplot as plt
 
 
 def save_model(model, save_path):
@@ -22,8 +23,22 @@ if __name__ == '__main__':
     args = parser.arg_parse()
 
     '''create directory to save trained model and other info'''
+    timeObj = datetime.now()
+    stamp = "%d%d%d_%d:%d" % (timeObj.year, timeObj.month, timeObj.day, timeObj.hour, timeObj.minute)
+    print(stamp)
+
+    if args.bwcluster:
+        save_dir = args.model + "_lr:" + str(args.lr) + "_" + stamp
+        args.save_dir = os.path.join(args.work_dir_bwcluster, args.ws_model_dir, "log", save_dir)
+
     if not os.path.exists(args.save_dir):
         os.makedirs(args.save_dir)
+
+    log_name = os.path.join(args.save_dir, "training.log")
+    logging.basicConfig(filename=log_name, level=logging.DEBUG, format='%(message)s')
+
+    for arg, value in vars(args).items():
+        logging.info(value)
 
     ''' setup GPU '''
     if torch.cuda.is_available():
@@ -37,31 +52,37 @@ if __name__ == '__main__':
     ''' load dataset and prepare data loader '''
     print('===> prepare dataloader ...')
 
-    train_loader = torch.utils.data.DataLoader(Model.data.CNVData(args, mode='train'),
+    train_loader = torch.utils.data.DataLoader(data.CNVData(args, mode='train'),
                                                batch_size=args.train_batch,
                                                num_workers=args.workers,
                                                shuffle=True)
-    val_loader = torch.utils.data.DataLoader(Model.data.CNVData(args, mode='val'),
+    val_loader = torch.utils.data.DataLoader(data.CNVData(args, mode='val'),
                                              batch_size=args.train_batch,
                                              num_workers=args.workers,
                                              shuffle=False)
 
-
     ''' load model '''
     print('===> prepare model ...')
     if args.model == "Net":
-        model = Model.models.Net(args)
+        model = models.Net(args)
     elif args.model == "CNN_Net":
-        model = Model.models.CNN_Net(args)
+        model = models.CNN_Net(args)
+
+    # if torch.cuda.device_count() > 1:
+    #     print("Let's use", torch.cuda.device_count(), "GPUs!")
+    #     model = DistributedDataParallel(model)
 
     if torch.cuda.is_available():
         model.cuda() #load model to gpu
 
     #testing input/output sizes of layer
-    summary(model, (3, 265,265))
+    #summary(model, (3, 265,265))
 
     ''' define loss '''
-    criterion = nn.CrossEntropyLoss()
+    weights = [0.4, 3.0, 3.0]
+    class_weights = torch.FloatTensor(weights).cuda()
+
+    criterion = nn.CrossEntropyLoss(weight=class_weights)
 
     ''' setup optimizer '''
     optimizer = torch.optim.Adam(model.parameters(), lr=args.lr, weight_decay=args.weight_decay)
@@ -92,7 +113,7 @@ if __name__ == '__main__':
             loss = criterion(output, cls)  # compute loss
 
             optimizer.zero_grad()  # set grad of all parameters to zero
-            loss.backward()  # compute gradient for each parameters
+            loss.backward()
             optimizer.step()  # update parameters
 
             ''' write out information to tensorboard '''
@@ -103,14 +124,19 @@ if __name__ == '__main__':
 
         if epoch % args.val_epoch == 0:
             ''' evaluate the model '''
-            acc = evaluate(model, val_loader)
+            acc = test.evaluate(model, val_loader)
             writer.add_scalar('val_acc', acc, iters)
+
+            # fig = plt.figure()
+            # plt.imshow(conf_mat)
+            # writer.add_figure('confusion_mat', fig)
+
             print('Epoch: [{}] ACC:{}'.format(epoch, acc))
 
-    #         ''' save best model '''
-    #         if acc > best_acc:
-    #             save_model(model, os.path.join(args.save_dir, 'model_best.pth.tar'))
-    #             best_acc = acc
-    #
-    #     ''' save model '''
-    #     save_model(model, os.path.join(args.save_dir, 'model_{}.pth.tar'.format(epoch)))
+            ''' save best model '''
+            if acc > best_acc:
+                save_model(model, os.path.join(args.save_dir, 'model_best.pth.tar'))
+                best_acc = acc
+
+        ''' save model '''
+        save_model(model, os.path.join(args.save_dir, 'model_{}.pth.tar'.format(epoch)))
