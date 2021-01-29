@@ -25,10 +25,10 @@ class CNVData(Dataset):
             data_dir = args.data_dir
 
         'set data according to mode'
-        if mode == 'train':
+        if mode == 'train' or mode == 'inception':
             sample_id = args.sample_id
             chrom_id = args.chrom_id
-        if mode == 'val':
+        if mode == 'val' or mode == 'inception_val':
             sample_id = args.sample_id_val
             chrom_id = args.chrom_id_val
         if mode == 'test':
@@ -72,6 +72,15 @@ class CNVData(Dataset):
 
         elif self.mode == 'val' or self.mode == 'test':
             self.transform = transforms.Compose([
+                transforms.ToTensor(),  # (H,W,C)->(C,H,W), [0,255]->[0, 1.0] RGB->RGB
+                transforms.Normalize(MEAN, STD)
+            ])
+
+        if self.mode == 'inception' or self.mode == 'inception_val':
+            self.transform = transforms.Compose([
+                transforms.Resize(299),
+                transforms.CenterCrop(299),
+                #transforms.RandomHorizontalFlip(0.5),
                 transforms.ToTensor(),  # (H,W,C)->(C,H,W), [0,255]->[0, 1.0] RGB->RGB
                 transforms.Normalize(MEAN, STD)
             ])

@@ -1,6 +1,7 @@
 import torch
 import torch.nn as nn
 from torchvision import models
+import parser
 
 
 class Net(nn.Module):
@@ -121,5 +122,98 @@ class CNN_Net(nn.Module):
         # macht exakt batchsize columns und entsprechend viele rows
         x = x.view(x.size(0), -1)
         img_label = self.classif(x)
-
         return img_label
+
+
+class Trans_Net(nn.Module):
+    def __init__(self, args):
+        super(Trans_Net, self).__init__()
+
+        ''' load pretrained resnetmodel and freeze parameter '''
+        model = models.resnet34(pretrained=True)
+        num_features = model.fc.in_features
+        model.fc = nn.Linear(num_features, 3)
+
+        self.con_model = model
+
+        # self.resmodel = torch.nn.Sequential(*(list(model.children())[:-2]))
+        #
+        # ''' declare layers used in this network'''
+        # # first block
+        # self.transconv1 = nn.ConvTranspose2d(512, 256, kernel_size=4, stride=2, padding=1, bias=False)
+        # self.bn1 = nn.BatchNorm2d(256)
+        # self.relu1 = nn.ReLU()  # 11x14 --> 22x28
+        #
+        # # second block
+        # self.transconv2 = nn.ConvTranspose2d(256, 128, kernel_size=4, stride=2, padding=1, bias=False)
+        # self.bn2 = nn.BatchNorm2d(128)
+        # self.relu2 = nn.ReLU()  # 22x28 --> 44x56
+        #
+        # # third block
+        # self.transconv3 = nn.ConvTranspose2d(128, 64, kernel_size=4, stride=2, padding=1, bias=False)
+        # self.bn3 = nn.BatchNorm2d(64)
+        # self.relu3 = nn.ReLU()  # 44x56 --> 88x112
+        #
+        # # fourth block
+        # self.transconv4 = nn.ConvTranspose2d(64, 32, kernel_size=4, stride=2, padding=1, bias=False)
+        # self.bn4 = nn.BatchNorm2d(32)
+        # self.relu4 = nn.ReLU()  # 88x112 --> 176x224
+        #
+        # # fifth block
+        # self.transconv5 = nn.ConvTranspose2d(32, 16, kernel_size=4, stride=2, padding=1, bias=False)
+        # self.bn5 = nn.BatchNorm2d(16)
+        # self.relu5 = nn.ReLU()  # 176x224 --> 352x448
+        #
+        # # sixth block
+        # self.conv6 = nn.Conv2d(16, 9, kernel_size=1, stride=1, padding=0, bias=True)  # 352x448 --> 352x448
+        #
+        # self.drop = nn.Dropout2d()
+
+    def forward(self, img):
+        x = self.con_model(img)
+
+        # x = self.relu1(self.bn1(self.transconv1(x)))
+        #
+        # x = self.relu2(self.bn2(self.transconv2(x)))
+        #
+        # x = self.relu3(self.bn3(self.transconv3(x)))
+        #
+        # x = self.relu4(self.bn4(self.transconv4(x)))
+        #
+        # x = self.relu5(self.bn5(self.transconv5(x)))
+        #
+        # x = self.conv6(x)
+        #
+        # x = self.drop(x)
+        print(x)
+
+        return x
+
+
+class Deep_Variant_Net(nn.Module):
+    def __init__(self, args):
+        super(Deep_Variant_Net,self).__init__()
+
+        ''' load pretrained resnetmodel and freeze parameter '''
+        model_ft = models.inception_v3(pretrained=True, aux_logits=False)
+
+        # Handle the auxilary net
+        #num_ftrs = model_ft.AuxLogits.fc.in_features
+        #model_ft.AuxLogits.fc = nn.Linear(num_ftrs, 3)
+        # Handle the primary net
+        num_ftrs = model_ft.fc.in_features
+        model_ft.fc = nn.Linear(num_ftrs, 3)
+        nn.init.normal_(model_ft.fc.weight, mean=0, std=0.001)
+
+        self.con_model = model_ft
+
+    def forward(self, img):
+        x = self.con_model(img)
+        return x
+
+
+if __name__ == '__main__':
+    args = parser.arg_parse()
+    model = Deep_Variant_Net(args)
+
+    print(list(model.named_children()))

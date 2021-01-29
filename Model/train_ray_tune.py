@@ -12,52 +12,16 @@ import logging
 import parser
 from datetime import datetime
 import matplotlib.pyplot as plt
+from ray import tune
+from ray.tune import CLIReporter
+from ray.tune.schedulers import ASHAScheduler
 
 
 def save_model(model, save_path):
     torch.save(model.state_dict(), save_path)
 
 
-def load_data(args):
-
-    train_loader = torch.utils.data.DataLoader(data.CNVData(args, mode='train'),
-                                               batch_size=args.train_batch,
-                                               num_workers=args.workers,
-                                               shuffle=True)
-
-    val_loader = torch.utils.data.DataLoader(data.CNVData(args, mode='val'),
-                                             batch_size=args.train_batch,
-                                             num_workers=args.workers,
-                                             shuffle=False)
-    return train_loader, val_loader
-
-
-#def train(config, checkpoint_dir=None, args):
-
-
-
-if __name__ == '__main__':
-
-    args = parser.arg_parse()
-
-    '''create directory to save trained model and other info'''
-    timeObj = datetime.now()
-    stamp = "%d%d%d_%d:%d" % (timeObj.year, timeObj.month, timeObj.day, timeObj.hour, timeObj.minute)
-    print(stamp)
-
-    if args.bwcluster:
-        save_dir = args.model + "_lr:" + str(args.lr) + "_" + stamp
-        args.save_dir = os.path.join(args.work_dir_bwcluster, args.ws_model_dir, "log", save_dir)
-
-    if not os.path.exists(args.save_dir):
-        os.makedirs(args.save_dir)
-
-    log_name = os.path.join(args.save_dir, "training.log")
-    logging.basicConfig(filename=log_name, level=logging.DEBUG, format='%(message)s')
-
-    for arg, value in vars(args).items():
-        logging.info(value)
-
+def train_model(config, checkpoint_dir=None):
     ''' setup GPU '''
     if torch.cuda.is_available():
         torch.cuda.set_device(args.gpu)
@@ -71,11 +35,11 @@ if __name__ == '__main__':
     print('===> prepare dataloader ...')
 
     train_loader = torch.utils.data.DataLoader(data.CNVData(args, mode='train'),
-                                               batch_size=args.train_batch,
+                                               batch_size=int(config["batch_size"]),
                                                num_workers=args.workers,
                                                shuffle=True)
     val_loader = torch.utils.data.DataLoader(data.CNVData(args, mode='val'),
-                                             batch_size=args.train_batch,
+                                             batch_size=int(config["batch_size"]),
                                              num_workers=args.workers,
                                              shuffle=False)
 
@@ -85,31 +49,37 @@ if __name__ == '__main__':
         model = models.Net(args)
     elif args.model == "CNN_Net":
         model = models.CNN_Net(args)
+    elif args.model == "Trans_Net":
+        model = models.Trans_Net(args)
 
-    # if torch.cuda.device_count() > 1:
-    #     print("Let's use", torch.cuda.device_count(), "GPUs!")
-    #     model = DistributedDataParallel(model)
-
+    device = "cpu"
     if torch.cuda.is_available():
-        model.cuda() #load model to gpu
-
-    #testing input/output sizes of layer
-    #summary(model, (3, 265,265))
+        device = "cuda:0"
+        if torch.cuda.device_count() > 1:
+            model = nn.DataParallel(model)
+    model.to(device)
 
     ''' define loss '''
-    weights = [0.4, 3.0, 3.0]
-    if torch.cuda.is_available():
-        class_weights = torch.FloatTensor(weights).cuda()
-    else:
-        class_weights = torch.FloatTensor(weights)
-
-    criterion = nn.CrossEntropyLoss(weight=class_weights)
+    # weights = [0.4, 3.0, 3.0]
+    # if torch.cuda.is_available():
+    #     class_weights = torch.FloatTensor(weights).cuda()
+    # else:
+    #     class_weights = torch.FloatTensor(weights)
+    #criterion = nn.CrossEntropyLoss(weight=class_weights)
+    criterion = nn.CrossEntropyLoss()
 
     ''' setup optimizer '''
-    optimizer = torch.optim.Adam(model.parameters(), lr=args.lr, weight_decay=args.weight_decay)
+    optimizer = torch.optim.AdamW(model.parameters(), lr=config["lr"])
 
-    ''' setup tensorboard '''
-    writer = SummaryWriter(os.path.join(args.save_dir, 'train_info'))
+    ''' save configurations '''
+    if checkpoint_dir:
+        model_state, optimizer_state = torch.load(
+            os.path.join(checkpoint_dir, "checkpoint"))
+        model.load_state_dict(model_state)
+        optimizer.load_state_dict(optimizer_state)
+
+    # ''' setup tensorboard '''
+    # writer = SummaryWriter(os.path.join(args.save_dir, 'train_info'))
 
     ''' train model '''
     print('===> start training ...')
@@ -140,26 +110,113 @@ if __name__ == '__main__':
             optimizer.step()  # update parameters
 
             ''' write out information to tensorboard '''
-            writer.add_scalar('loss', loss.data.cpu().numpy(), iters)
+            #writer.add_scalar('loss', loss.data.cpu().numpy(), iters)
             train_info += ' loss: {:.4f}'.format(loss.data.cpu().numpy())
 
             print(train_info)
 
         if epoch % args.val_epoch == 0:
-            ''' evaluate the model '''
-            acc = test.evaluate(model, val_loader)
-            writer.add_scalar('val_acc', acc, iters)
+            # Validation loss
+            val_loss = 0.0
+            val_steps = 0
+            total = 0
+            correct = 0
+            for i, (imgs, cls) in enumerate(val_loader):
+                with torch.no_grad():
 
-            # fig = plt.figure()
-            # plt.imshow(conf_mat)
-            # writer.add_figure('confusion_mat', fig)
+                    if torch.cuda.is_available():
+                        imgs, cls = imgs.cuda(), cls.cuda()
 
-            print('Epoch: [{}] ACC:{}'.format(epoch, acc))
+                    outputs = model(imgs)
+                    _, predicted = torch.max(outputs.data, 1)
+                    total += cls.size(0)
+                    correct += (predicted == cls).sum().item()
 
-            ''' save best model '''
-            if acc > best_acc:
-                save_model(model, os.path.join(args.save_dir, 'model_best.pth.tar'))
-                best_acc = acc
+                    loss = criterion(outputs, cls)
+                    val_loss += loss.cpu().numpy()
+                    val_steps += 1
 
-        ''' save model '''
-        save_model(model, os.path.join(args.save_dir, 'model_{}.pth.tar'.format(epoch)))
+            tune.report(loss=(val_loss / val_steps), accuracy=correct / total)
+
+            # ''' evaluate the model '''
+            # acc = test.evaluate(model, val_loader)
+            # #writer.add_scalar('val_acc', acc, iters)
+            #
+            # # fig = plt.figure()
+            # # plt.imshow(conf_mat)
+            # # writer.add_figure('confusion_mat', fig)
+            #
+            # print('Epoch: [{}] ACC:{}'.format(epoch, acc))
+            # #tune.report(accuracy=acc)
+
+
+        #     ''' save best model '''
+        #     if acc > best_acc:
+        #         save_model(model, os.path.join(args.save_dir, 'model_best.pth.tar'))
+        #         best_acc = acc
+        #
+        # ''' save model '''
+        # save_model(model, os.path.join(args.save_dir, 'model_{}.pth.tar'.format(epoch)))
+
+
+def main(num_samples=10, max_num_epochs=10, gpus_per_trial=2):
+
+    # define search space
+    config = {
+        "lr": tune.loguniform(1e-6, 1e-3),
+        "batch_size": tune.choice([32, 64, 128])
+    }
+
+    scheduler = ASHAScheduler(
+        metric="loss",
+        mode="min",
+        max_t=max_num_epochs,
+        grace_period=1,
+        reduction_factor=2)
+
+    reporter = CLIReporter(
+        # parameter_columns=["l1", "l2", "lr", "batch_size"],
+        metric_columns=["loss", "accuracy", "training_iteration"])
+
+    result = tune.run(
+        train_model,
+        resources_per_trial={"gpu": gpus_per_trial},
+        config=config,
+        num_samples=num_samples,
+        scheduler=scheduler,
+        progress_reporter=reporter)
+
+    best_trial = result.get_best_trial("loss", "min", "last")
+    print("Best trial config: {}".format(best_trial.config))
+    print("Best trial final validation loss: {}".format(
+        best_trial.last_result["loss"]))
+    print("Best trial final validation accuracy: {}".format(
+        best_trial.last_result["accuracy"]))
+
+    # if args.model == "Net":
+    #     best_trained_model = models.Net(args)
+    # elif args.model == "CNN_Net":
+    #     best_trained_model = models.CNN_Net(args)
+    # elif args.model == "Trans_Net":
+    #     best_trained_model = models.Trans_Net(args)
+    #
+    # device = "cpu"
+    # if torch.cuda.is_available():
+    #     device = "cuda:0"
+    #     if gpus_per_trial > 1:
+    #         best_trained_model = nn.DataParallel(best_trained_model)
+    # best_trained_model.to(device)
+    #
+    # best_checkpoint_dir = best_trial.checkpoint.value
+    # model_state, optimizer_state = torch.load(os.path.join(
+    #     best_checkpoint_dir, "checkpoint"))
+    # best_trained_model.load_state_dict(model_state)
+    #
+    # test_acc = test.evaluate(best_trained_model, device)
+    # print("Best trial test set accuracy: {}".format(test_acc))
+
+
+if __name__ == '__main__':
+    args = parser.arg_parse()
+
+    main(num_samples=5, max_num_epochs=5, gpus_per_trial=1)

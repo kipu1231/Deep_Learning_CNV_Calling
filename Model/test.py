@@ -7,7 +7,7 @@ import numpy as np
 import torch.nn as nn
 import torch.nn.functional as F
 import torch.optim as optim
-from sklearn.metrics import accuracy_score, confusion_matrix
+from sklearn.metrics import accuracy_score, confusion_matrix, f1_score
 import csv
 
 
@@ -22,12 +22,10 @@ def evaluate(model, data_loader):
             if torch.cuda.is_available():
                 imgs = imgs.cuda()
             pred = model(imgs)
-            print(pred.shape)
 
             _, pred = torch.max(pred, dim=1)
-            print(pred.shape)
-
             pred = pred.cpu().numpy().squeeze()
+
             gt = gt.numpy().squeeze()
 
             preds.append(pred)
@@ -37,6 +35,9 @@ def evaluate(model, data_loader):
     preds = np.concatenate(preds)
 
     print(confusion_matrix(gts, preds))
+    print(f1_score(gts, preds, average='macro'))
+    print(f1_score(gts, preds, average='micro'))
+    print(f1_score(gts, preds, average='weighted'))
 
     return accuracy_score(gts, preds)
 

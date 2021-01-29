@@ -2,13 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e6ee702-a4cc-4ca1-bea6-13a3d438837c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Model/train_ray_tune.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Model/train_ray.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Model/data.py" beforeDir="false" afterPath="$PROJECT_DIR$/Model/data.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Model/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Model/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Model/parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/Model/parser.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Model/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/Model/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Model/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/Model/train.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/train.sh" beforeDir="false" afterPath="$PROJECT_DIR$/Model/train.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/train_ray_tune.py" beforeDir="false" afterPath="$PROJECT_DIR$/Model/train_ray_tune.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,34 +36,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Model/test.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="369">
-              <caret line="41" selection-start-line="41" selection-end-line="41" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Model/parser.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-473">
-              <caret line="25" column="90" lean-forward="true" selection-start-line="25" selection-start-column="90" selection-end-line="25" selection-end-column="90" />
-              <folding>
-                <element signature="e#0#38#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Model/train.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="18" selection-start-line="18" selection-end-line="18" />
+            <state relative-caret-position="1112">
+              <caret line="101" column="29" selection-start-line="101" selection-start-column="29" selection-end-line="101" selection-end-column="29" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -69,10 +48,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Model/train_ray_tune.py">
+        <entry file="file://$PROJECT_DIR$/Model/train.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+            <state relative-caret-position="45">
+              <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -80,8 +59,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Model/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="690">
-              <caret line="46" selection-start-line="46" selection-end-line="46" />
+            <state relative-caret-position="362">
+              <caret line="211" selection-start-line="211" selection-end-line="211" />
               <folding>
                 <element signature="e#0#12#0" expanded="true" />
               </folding>
@@ -92,10 +71,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Model/data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="346">
-              <caret line="59" column="56" selection-start-line="59" selection-start-column="56" selection-end-line="59" selection-end-column="56" />
+            <state relative-caret-position="-542">
+              <caret line="30" column="51" selection-start-line="30" selection-start-column="51" selection-end-line="30" selection-end-column="51" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Model/parser.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="100">
+              <caret line="46" column="66" selection-start-line="46" selection-start-column="66" selection-end-line="46" selection-end-column="66" />
+              <folding>
+                <element signature="e#0#38#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -125,6 +116,7 @@
       <find>N</find>
       <find>image_gen</find>
       <find>re</find>
+      <find>random_seed</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -139,7 +131,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Whole Genome Imags/Whole_genome_Image.py" />
         <option value="$PROJECT_DIR$/Whole_Genome_Imags/Candidate_Image.py" />
         <option value="$PROJECT_DIR$/Non_Deletion_Image_Source/Candidate_Image.py" />
         <option value="$PROJECT_DIR$/Utils/my_file_travel.py" />
@@ -178,26 +169,27 @@
         <option value="$PROJECT_DIR$/ImageGeneration/Image_Generation.py" />
         <option value="$PROJECT_DIR$/Model/log/training.log" />
         <option value="$PROJECT_DIR$/Postprocessing/count_result.py" />
+        <option value="$PROJECT_DIR$/Model/test.py" />
+        <option value="$PROJECT_DIR$/Model/test.py" />
+        <option value="$PROJECT_DIR$/Model/train_ray.sh" />
+        <option value="$PROJECT_DIR$/Model/train_ray_tune.py" />
         <option value="$PROJECT_DIR$/Model/train.sh" />
         <option value="$PROJECT_DIR$/Model/data.py" />
         <option value="$PROJECT_DIR$/Model/data.py" />
-        <option value="$PROJECT_DIR$/Model/test.py" />
-        <option value="$PROJECT_DIR$/Model/test.py" />
         <option value="$PROJECT_DIR$/Model/train.py" />
         <option value="$PROJECT_DIR$/Model/train.py" />
         <option value="$PROJECT_DIR$/Model/models.py" />
         <option value="$PROJECT_DIR$/Model/models.py" />
-        <option value="$PROJECT_DIR$/Model/train_ray_tune.py" />
         <option value="$PROJECT_DIR$/Model/parser.py" />
         <option value="$PROJECT_DIR$/Model/parser.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-158" />
-    <option name="y" value="-1057" />
-    <option name="width" value="1576" />
-    <option name="height" value="932" />
+    <option name="x" value="19" />
+    <option name="y" value="23" />
+    <option name="width" value="1421" />
+    <option name="height" value="800" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -205,22 +197,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
-          <expand>
-            <path>
-              <item name="Deep_Learning_CNV_Calling" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="~/Uni/Master/MA2/Deep_Learning_CNV_Calling" type="442cc68d:ScopeViewTreeModel$RootNode" />
-            </path>
-            <path>
-              <item name="Deep_Learning_CNV_Calling" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="~/Uni/Master/MA2/Deep_Learning_CNV_Calling" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="Model" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -232,6 +208,22 @@
               <item name="DeepSV" type="b2602c69:ProjectViewProjectNode" />
               <item name="DeepSV" type="462c0819:PsiDirectoryNode" />
               <item name="Non_Deletion_Image_Source" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
+          <expand>
+            <path>
+              <item name="Deep_Learning_CNV_Calling" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="~/Uni/Master/MA2/Deep_Learning_CNV_Calling" type="442cc68d:ScopeViewTreeModel$RootNode" />
+            </path>
+            <path>
+              <item name="Deep_Learning_CNV_Calling" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="~/Uni/Master/MA2/Deep_Learning_CNV_Calling" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="Model" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
           </expand>
           <select />
@@ -296,7 +288,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Image_Generation" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="models" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="DeepSV" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -304,34 +296,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ImageGeneration" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Model" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ImageGeneration/Image_Generation.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="preprocess_bam" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="DeepSV" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Preprocessing" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Preprocessing/preprocess_bam.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Model/models.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -406,21 +376,43 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="train_ray_tune" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="DeepSV" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Model" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Model/train_ray_tune.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Python.DeepSV" />
-      <item itemvalue="Python.Image_Generation" />
       <item itemvalue="Python.train (1)" />
-      <item itemvalue="Python.preprocess_bam" />
       <item itemvalue="Python.train" />
       <item itemvalue="Python.test" />
+      <item itemvalue="Python.models" />
+      <item itemvalue="Python.train_ray_tune" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.train (1)" />
+        <item itemvalue="Python.models" />
+        <item itemvalue="Python.train_ray_tune" />
         <item itemvalue="Python.test" />
         <item itemvalue="Python.train" />
-        <item itemvalue="Python.Image_Generation" />
-        <item itemvalue="Python.preprocess_bam" />
       </list>
     </recent_temporary>
   </component>
@@ -446,12 +438,15 @@
       <workItem from="1608199189104" duration="84077000" />
       <workItem from="1609777922718" duration="96067000" />
       <workItem from="1611160943355" duration="29280000" />
-      <workItem from="1611595176765" duration="8131000" />
+      <workItem from="1611595176765" duration="30613000" />
+      <workItem from="1611765816688" duration="1775000" />
+      <workItem from="1611831395202" duration="956000" />
+      <workItem from="1611909481356" duration="5571000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="431396000" />
+    <option name="totallyTimeSpent" value="462180000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -463,15 +458,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-158" y="-1057" width="1576" height="932" extended-state="0" />
+    <frame x="19" y="23" width="1421" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23794003" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.275562" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32690126" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.7939498" visible="true" weight="0.43571427" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.7939498" visible="true" weight="0.14689265" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39788732" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -480,7 +475,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Inspection Results" order="10" weight="0.32941177" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49657536" weight="0.5107143" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49657536" weight="0.5106838" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.20605023" side_tool="true" weight="0.35642457" />
       <window_info anchor="bottom" id="Python Console" order="13" weight="0.32857144" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -521,8 +516,9 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/DeepSV$train.coverage" NAME="train Coverage Results" MODIFIED="1611079702826" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Model" />
+    <SUITE FILE_PATH="coverage/Deep_Learning_CNV_Calling$train_ray_tune.coverage" NAME="train_ray_tune Coverage Results" MODIFIED="1611683227603" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Model" />
     <SUITE FILE_PATH="coverage/DeepSV$preprocess_vcf.coverage" NAME="preprocess_vcf Coverage Results" MODIFIED="1608494234190" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Preprocessing" />
-    <SUITE FILE_PATH="coverage/Deep_Learning_CNV_Calling$train__1_.coverage" NAME="train (1) Coverage Results" MODIFIED="1611604353985" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Model" />
+    <SUITE FILE_PATH="coverage/Deep_Learning_CNV_Calling$train__1_.coverage" NAME="train (1) Coverage Results" MODIFIED="1611919756723" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Model" />
     <SUITE FILE_PATH="coverage/DeepSV$k_means.coverage" NAME="k_means Coverage Results" MODIFIED="1607541453811" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/K_Means_Cluster_Source" />
     <SUITE FILE_PATH="coverage/DeepSV$preprocess_bam.coverage" NAME="preprocess_bam Coverage Results" MODIFIED="1610449364839" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Preprocessing" />
     <SUITE FILE_PATH="coverage/Deep_Learning_CNV_Calling$test.coverage" NAME="test Coverage Results" MODIFIED="1611311371495" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Model" />
@@ -530,26 +526,9 @@
     <SUITE FILE_PATH="coverage/DeepSV$Data_understanding.coverage" NAME="Data_understanding Coverage Results" MODIFIED="1605550974701" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Daten_Test" />
     <SUITE FILE_PATH="coverage/DeepSV$train__1_.coverage" NAME="train (1) Coverage Results" MODIFIED="1610473040349" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Model" />
     <SUITE FILE_PATH="coverage/DeepSV$read_depth_stat.coverage" NAME="read_depth_stat Coverage Results" MODIFIED="1609179708502" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Preprocessing" />
+    <SUITE FILE_PATH="coverage/Deep_Learning_CNV_Calling$models.coverage" NAME="models Coverage Results" MODIFIED="1611917087108" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Model" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Non_Deletion_Image_Source/Generate_Non_Deletion_Image.py" />
-    <entry file="file://$PROJECT_DIR$/Preprocessing/NA20502/NA20502_cnv_list.csv" />
-    <entry file="file://$PROJECT_DIR$/Preprocessing/NA20502/NA20502_all_sv.vcf" />
-    <entry file="file://$PROJECT_DIR$/Preprocessing/NA18511/NA18511_cnv_list.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20576">
-          <caret line="1527" column="9" selection-start-line="1527" selection-start-column="9" selection-end-line="1527" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../Python/anaconda3/envs/deepSV/lib/python3.6/site-packages/scipy/stats/_discrete_distns.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1270">
-          <caret line="500" lean-forward="true" selection-start-line="500" selection-end-line="500" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/Hydra-Version-0.5.3/scripts/pairDiscordants.py" />
     <entry file="file://$USER_HOME$/Downloads/rdxplorer/rdxplorer.py" />
     <entry file="file://$USER_HOME$/Downloads/rdxplorer/pileup.py" />
     <entry file="file://$USER_HOME$/Downloads/rdxplorer/rdxplorer_api.py" />
@@ -773,13 +752,6 @@
     <entry file="file://$PROJECT_DIR$/Model/test.sh">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../Python/anaconda3/envs/deepSV/lib/python3.6/site-packages/sklearn/metrics/classification.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="186" column="4" selection-start-line="186" selection-start-column="4" selection-end-line="186" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../3. Semester/NTU/Deep Learning/hw2-kipu1231/train.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="271">
@@ -800,13 +772,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Model/train.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="86" selection-start-line="13" selection-start-column="86" selection-end-line="13" selection-end-column="86" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ImageGeneration/Image_Generation.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="16">
@@ -817,40 +782,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Model/test.py">
+    <entry file="file://$PROJECT_DIR$/../../3. Semester/NTU/Deep Learning/hw2-kipu1231/models_best.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="41" selection-start-line="41" selection-end-line="41" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Model/data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="59" column="56" selection-start-line="59" selection-start-column="56" selection-end-line="59" selection-end-column="56" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Model/train.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Model/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="46" selection-start-line="46" selection-end-line="46" />
+        <state relative-caret-position="-230">
+          <caret line="18" column="8" lean-forward="true" selection-start-line="18" selection-start-column="8" selection-end-line="69" />
           <folding>
             <element signature="e#0#12#0" expanded="true" />
           </folding>
@@ -859,15 +794,107 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Model/train_ray_tune.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+        <state relative-caret-position="285">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Model/train_ray.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Python/anaconda3/envs/deepSV/lib/python3.6/site-packages/sklearn/metrics/classification.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="114" column="64" selection-start-line="114" selection-start-column="51" selection-end-line="114" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Model/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="466">
+          <caret line="128" column="37" lean-forward="true" selection-start-line="124" selection-start-column="4" selection-end-line="128" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Model/train.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Python/anaconda3/envs/deepSV/lib/python3.6/site-packages/torchvision/models/inception.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="509">
+          <caret line="76" column="78" selection-start-line="76" selection-start-column="66" selection-end-line="76" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Model/data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-542">
+          <caret line="30" column="51" selection-start-line="30" selection-start-column="51" selection-end-line="30" selection-end-column="51" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Model/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="362">
+          <caret line="211" selection-start-line="211" selection-end-line="211" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Python/anaconda3/envs/deepSV/lib/python3.6/site-packages/torch/optim/adamw.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-823">
+          <caret line="32" column="8" selection-start-line="32" selection-start-column="8" selection-end-line="32" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Python/anaconda3/envs/deepSV/lib/python3.6/site-packages/torch/nn/functional.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="365">
+          <caret line="2470" column="71" lean-forward="true" selection-start-line="2470" selection-start-column="71" selection-end-line="2470" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Python/anaconda3/envs/deepSV/lib/python3.6/site-packages/torch/nn/modules/loss.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="960" column="24" lean-forward="true" selection-start-line="960" selection-start-column="17" selection-end-line="960" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Model/train.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1112">
+          <caret line="101" column="29" selection-start-line="101" selection-start-column="29" selection-end-line="101" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Model/parser.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-473">
-          <caret line="25" column="90" lean-forward="true" selection-start-line="25" selection-start-column="90" selection-end-line="25" selection-end-column="90" />
+        <state relative-caret-position="100">
+          <caret line="46" column="66" selection-start-line="46" selection-start-column="66" selection-end-line="46" selection-end-column="66" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>

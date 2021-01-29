@@ -49,46 +49,63 @@ if __name__ == '__main__':
     torch.manual_seed(args.random_seed)
     torch.cuda.manual_seed(args.random_seed)
 
-    ''' load dataset and prepare data loader '''
-    print('===> prepare dataloader ...')
-
-    train_loader = torch.utils.data.DataLoader(data.CNVData(args, mode='train'),
-                                               batch_size=args.train_batch,
-                                               num_workers=args.workers,
-                                               shuffle=True)
-    val_loader = torch.utils.data.DataLoader(data.CNVData(args, mode='val'),
-                                             batch_size=args.train_batch,
-                                             num_workers=args.workers,
-                                             shuffle=False)
-
     ''' load model '''
     print('===> prepare model ...')
+    mode_train = 'train'
+    mode_val = 'val'
+
     if args.model == "Net":
         model = models.Net(args)
     elif args.model == "CNN_Net":
         model = models.CNN_Net(args)
+    elif args.model == "Trans_Net":
+        model = models.Trans_Net(args)
+    elif args.model == "Deep_Variant_Net":
+        model = models.Deep_Variant_Net(args)
+        mode_train = 'inception'
+        mode_val = 'inception_val'
 
     # if torch.cuda.device_count() > 1:
-    #     print("Let's use", torch.cuda.device_count(), "GPUs!")
     #     model = DistributedDataParallel(model)
 
     if torch.cuda.is_available():
         model.cuda() #load model to gpu
 
-    #testing input/output sizes of layer
-    #summary(model, (3, 265,265))
+    ''' load pretrained model '''
+    if args.use_pretrained_model:
+        pre_mod_dir = os.path.join(args.work_dir_bwcluster, args.ws_model_dir, "log", args.dir_pretrained_model)
+        if torch.cuda.is_available():
+            checkpoint = torch.load(pre_mod_dir)
+        else:
+            checkpoint = torch.load(pre_mod_dir, map_location=torch.device('cpu'))
+        model.load_state_dict(checkpoint)
+
+    ''' load dataset and prepare data loader '''
+    print('===> prepare dataloader ...')
+    train_loader = torch.utils.data.DataLoader(data.CNVData(args, mode=mode_train),
+                                               batch_size=args.train_batch,
+                                               num_workers=args.workers,
+                                               shuffle=True)
+    val_loader = torch.utils.data.DataLoader(data.CNVData(args, mode=mode_val),
+                                             batch_size=args.train_batch,
+                                             num_workers=args.workers,
+                                             shuffle=False)
 
     ''' define loss '''
-    weights = [0.4, 3.0, 3.0]
-    if torch.cuda.is_available():
-        class_weights = torch.FloatTensor(weights).cuda()
-    else:
-        class_weights = torch.FloatTensor(weights)
+    # weights = [0.4, 3.0, 3.0]
+    # if torch.cuda.is_available():
+    #     class_weights = torch.FloatTensor(weights).cuda()
+    # else:
+    #     class_weights = torch.FloatTensor(weights)
 
-    criterion = nn.CrossEntropyLoss(weight=class_weights)
+    #criterion = nn.CrossEntropyLoss(weight=class_weights)
+    criterion = nn.CrossEntropyLoss()
 
     ''' setup optimizer '''
-    optimizer = torch.optim.Adam(model.parameters(), lr=args.lr, weight_decay=args.weight_decay)
+    if args.model == "Deep_Variant_Net":
+        optimizer = torch.optim.SGD(model.parameters(), lr=0.0015, momentum=0.8, weight_decay=args.weight_decay)
+    else:
+        optimizer = torch.optim.AdamW(model.parameters(), lr=args.lr)
 
     ''' setup tensorboard '''
     writer = SummaryWriter(os.path.join(args.save_dir, 'train_info'))
