@@ -2,16 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e6ee702-a4cc-4ca1-bea6-13a3d438837c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Model/train_ray.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/data.py" beforeDir="false" afterPath="$PROJECT_DIR$/Model/data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Model/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Model/parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/Model/parser.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/Model/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Model/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/Model/train.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Model/train.sh" beforeDir="false" afterPath="$PROJECT_DIR$/Model/train.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model/train_ray_tune.py" beforeDir="false" afterPath="$PROJECT_DIR$/Model/train_ray_tune.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,11 +28,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Model/train.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1112">
-              <caret line="101" column="29" selection-start-line="101" selection-start-column="29" selection-end-line="101" selection-end-column="29" />
+            <state relative-caret-position="160">
+              <caret line="74" column="33" lean-forward="true" selection-start-line="74" selection-start-column="33" selection-end-line="74" selection-end-column="33" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -50,8 +43,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Model/train.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+            <state relative-caret-position="195">
+              <caret line="13" column="89" selection-start-line="13" selection-start-column="89" selection-end-line="13" selection-end-column="109" />
             </state>
           </provider>
         </entry>
@@ -59,7 +52,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Model/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
+            <state relative-caret-position="416">
               <caret line="211" selection-start-line="211" selection-end-line="211" />
               <folding>
                 <element signature="e#0#12#0" expanded="true" />
@@ -71,7 +64,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Model/data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-542">
+            <state relative-caret-position="450">
               <caret line="30" column="51" selection-start-line="30" selection-start-column="51" selection-end-line="30" selection-end-column="51" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
@@ -80,11 +73,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Model/parser.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="46" column="66" selection-start-line="46" selection-start-column="66" selection-end-line="46" selection-end-column="66" />
+            <state relative-caret-position="416">
+              <caret line="90" column="71" selection-start-line="90" selection-start-column="71" selection-end-line="90" selection-end-column="71" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -173,15 +166,15 @@
         <option value="$PROJECT_DIR$/Model/test.py" />
         <option value="$PROJECT_DIR$/Model/train_ray.sh" />
         <option value="$PROJECT_DIR$/Model/train_ray_tune.py" />
+        <option value="$PROJECT_DIR$/Model/data.py" />
+        <option value="$PROJECT_DIR$/Model/data.py" />
+        <option value="$PROJECT_DIR$/Model/models.py" />
+        <option value="$PROJECT_DIR$/Model/models.py" />
         <option value="$PROJECT_DIR$/Model/train.sh" />
-        <option value="$PROJECT_DIR$/Model/data.py" />
-        <option value="$PROJECT_DIR$/Model/data.py" />
-        <option value="$PROJECT_DIR$/Model/train.py" />
-        <option value="$PROJECT_DIR$/Model/train.py" />
-        <option value="$PROJECT_DIR$/Model/models.py" />
-        <option value="$PROJECT_DIR$/Model/models.py" />
         <option value="$PROJECT_DIR$/Model/parser.py" />
         <option value="$PROJECT_DIR$/Model/parser.py" />
+        <option value="$PROJECT_DIR$/Model/train.py" />
+        <option value="$PROJECT_DIR$/Model/train.py" />
       </list>
     </option>
   </component>
@@ -441,12 +434,12 @@
       <workItem from="1611595176765" duration="30613000" />
       <workItem from="1611765816688" duration="1775000" />
       <workItem from="1611831395202" duration="956000" />
-      <workItem from="1611909481356" duration="5571000" />
+      <workItem from="1611909481356" duration="10161000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="462180000" />
+    <option name="totallyTimeSpent" value="466770000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -459,14 +452,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="19" y="23" width="1421" height="800" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.275562" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.275562" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32690126" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.7939498" visible="true" weight="0.14689265" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.7939498" visible="true" weight="0.07062147" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39788732" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -826,37 +818,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Model/train.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../Python/anaconda3/envs/deepSV/lib/python3.6/site-packages/torchvision/models/inception.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="509">
           <caret line="76" column="78" selection-start-line="76" selection-start-column="66" selection-end-line="76" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Model/data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-542">
-          <caret line="30" column="51" selection-start-line="30" selection-start-column="51" selection-end-line="30" selection-end-column="51" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Model/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="211" selection-start-line="211" selection-end-line="211" />
-          <folding>
-            <element signature="e#0#12#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -881,22 +846,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Model/train.py">
+    <entry file="file://$PROJECT_DIR$/Model/train.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1112">
-          <caret line="101" column="29" selection-start-line="101" selection-start-column="29" selection-end-line="101" selection-end-column="29" />
+        <state relative-caret-position="195">
+          <caret line="13" column="89" selection-start-line="13" selection-start-column="89" selection-end-line="13" selection-end-column="109" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Model/data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="51" selection-start-line="30" selection-start-column="51" selection-end-line="30" selection-end-column="51" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Model/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="211" selection-start-line="211" selection-end-line="211" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Model/parser.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="46" column="66" selection-start-line="46" selection-start-column="66" selection-end-line="46" selection-end-column="66" />
+        <state relative-caret-position="416">
+          <caret line="90" column="71" selection-start-line="90" selection-start-column="71" selection-end-line="90" selection-end-column="71" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Model/train.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="74" column="33" lean-forward="true" selection-start-line="74" selection-start-column="33" selection-end-line="74" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>

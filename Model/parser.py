@@ -6,24 +6,28 @@ def arg_parse():
     parser = argparse.ArgumentParser(description='Model for calling CNVs')
 
     # training, validation and test data settings
-    parser.add_argument('--sample_id', type=list, default=["NA18511"],
-                        help="list of samples that should be included for training")
-    parser.add_argument('--chrom_id', type=list, default=["2"],
-                        help="List of chromosomes that should be included for training")
-    parser.add_argument('--sample_id_val', type=list, default=["NA18511"],
-                        help="list of samples that should be included for validation")
-    parser.add_argument('--chrom_id_val', type=list, default=["3"],
-                        help="List of chromosomes that should be included for training")
-    # parser.add_argument('--sample_id', type=list, default=["NA20502", "NA18525"],
+    # parser.add_argument('--sample_id', type=list, default=["NA18511"],
     #                     help="list of samples that should be included for training")
-    # parser.add_argument('--chrom_id', type=list, default=["1", "2","3", "4", "5", "6",
-    #                                                       "7", "8", "9", "10", "11", "12"],
+    # parser.add_argument('--chrom_id', type=list, default=["2"],
     #                     help="List of chromosomes that should be included for training")
-    # parser.add_argument('--sample_id_val', type=list, default=["NA19648"],
+    # parser.add_argument('--sample_id_val', type=list, default=["NA18511"],
     #                     help="list of samples that should be included for validation")
-    # parser.add_argument('--chrom_id_val', type=list, default=["1", "2","3", "4", "5", "6",
-    #                                                             "7", "8", "9", "10", "11", "12"],
-    #                     help="List of chromosomes that should be included for validation")
+    # parser.add_argument('--chrom_id_val', type=list, default=["3"],
+    #                     help="List of chromosomes that should be included for training")
+    parser.add_argument('--sample_id', type=list, default=["NA20502", "NA18525"],
+                        help="list of samples that should be included for training")
+    parser.add_argument('--chrom_id', type=list, default=["1", "2","3", "4", "5", "6",
+                                                          "7", "8", "9", "10", "11", "12",  "13",
+                                                          "14", "15", "16", "17", "18", "19", "20",
+                                                          '21', "22"],
+                        help="List of chromosomes that should be included for training")
+    parser.add_argument('--sample_id_val', type=list, default=["NA19648"],
+                        help="list of samples that should be included for validation")
+    parser.add_argument('--chrom_id_val', type=list, default=["1", "2","3", "4", "5", "6",
+                                                          "7", "8", "9", "10", "11", "12",  "13",
+                                                          "14", "15", "16", "17", "18", "19", "20",
+                                                          '21', "22"],
+                        help="List of chromosomes that should be included for validation")
     # parser.add_argument('--sample_id', type=list, default=["NA20502", "NA18525"],
     #                     help="list of samples that should be included for training")
     # parser.add_argument('--chrom_id', type=list, default=["11", "12", "13", "14", "15", "16",
@@ -48,19 +52,19 @@ def arg_parse():
                         help="Name of the model used for training")
     parser.add_argument('--gpu', default=0, type=int,
                         help='In homework, please always set to 0')
-    parser.add_argument('--epoch', default=10, type=int,
+    parser.add_argument('--epoch', default=25, type=int,
                         help="num of validation iterations")
     parser.add_argument('--val_epoch', default=1, type=int,
                         help="num of validation iterations")
-    parser.add_argument('--train_batch', default=128, type=int,
+    parser.add_argument('--train_batch', default=64, type=int,
                         help="train batch size")
-    parser.add_argument('--test_batch', default=128, type=int,
+    parser.add_argument('--test_batch', default=64, type=int,
                         help="test batch size")
 
     # Datasets parameters
     parser.add_argument('--workers', default=0, type=int,
                         help="number of data loading workers (default: 4)")
-    parser.add_argument('--bwcluster', type=bool, default=False,
+    parser.add_argument('--bwcluster', type=bool, default=True,
                         help="Define if script is run on bwcluster or not")
     parser.add_argument('--work_dir_bwcluster', type=str, default="/pfs/work7/workspace/scratch",
                         help="Path of work space directory on bwcluster")
@@ -84,7 +88,7 @@ def arg_parse():
     parser.add_argument('--exclude_no_cnvs', type=bool, default=False)
 
     # load pretrained model
-    parser.add_argument('--use_pretrained_model', type=bool, default=False)
+    parser.add_argument('--use_pretrained_model', type=str, default="no")
     parser.add_argument('--dir_pretrained_model', type=str, default='log/Net_model_best.pth.tar',
                         help="path to the pretrained model")
 

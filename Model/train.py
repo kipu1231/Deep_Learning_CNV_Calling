@@ -21,6 +21,7 @@ def save_model(model, save_path):
 if __name__ == '__main__':
 
     args = parser.arg_parse()
+    print(args)
 
     '''create directory to save trained model and other info'''
     timeObj = datetime.now()
@@ -72,7 +73,7 @@ if __name__ == '__main__':
         model.cuda() #load model to gpu
 
     ''' load pretrained model '''
-    if args.use_pretrained_model:
+    if args.use_pretrained_model == 'True':
         pre_mod_dir = os.path.join(args.work_dir_bwcluster, args.ws_model_dir, "log", args.dir_pretrained_model)
         if torch.cuda.is_available():
             checkpoint = torch.load(pre_mod_dir)
